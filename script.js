@@ -7,7 +7,7 @@ const h= document.getElementById('h')
 howdi.addEventListener("click", () => {
   count = 0;
   let dingdangdong = doit.value;
-  h.innerHTML=""
+  h.innerHTML=`<div class="circle square"></div>`;
   for (let index = 0; index < dingdangdong; index++) {
     //center is (250, -250)
     let x = Math.random() * 500;
