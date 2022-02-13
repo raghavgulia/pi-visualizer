@@ -1,22 +1,18 @@
-let count = 0;
-const doit = document.getElementById("doit");
-let dingdangdong = doit.value;
-const howdi = document.getElementById("howdi");
-const h= document.getElementById('h')
+const dotsInput = document.getElementById("dots");
+const button = document.getElementById("button");
+const square = document.getElementById("square");
 
-howdi.addEventListener("click", () => {
-  count = 0;
-  let dingdangdong = doit.value;
-  h.innerHTML=`<div class="circle square"></div>`;
-  for (let index = 0; index < dingdangdong; index++) {
-    //center is (250, -250)
+button.addEventListener("click", () => {
+  let count = 0;
+  square.innerHTML = `<div class="circle square"></div>`;
+  for (let index = 0; index < dotsInput.value; index++) {
     let x = Math.random() * 500;
     let y = Math.random() * 500;
-    const inside = (x - 250) ** 2 + (-y + 250) ** 2 < 250 ** 2;
+    const inside = (x - 250) ** 2 + (y - 250) ** 2 < 250 ** 2;
     if (inside) count++;
-    h.innerHTML += `<div class="dot circle" style="position:absolute;top:${y}px;left:${x}px;transform:translate(-50%, -50%);background-color:${
-      inside ? "red" : "black"
-    }"></div>`;
+    square.innerHTML += `<div class="dot circle ${
+      inside ? "inside" : ""
+    }" style="top:${y}px;left:${x}px;"></div>`;
   }
-  alert((count / dingdangdong) * 4);
+  alert((count / dotsInput.value) * 4);
 });

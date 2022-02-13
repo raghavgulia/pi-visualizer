@@ -1,21 +1,31 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.square{
-    width: 500px;
-    height: 500px;
-    background-color: blue;
-    border: 1px solid black;
+.square {
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+  border: 1px solid black;
+  position: relative;
 }
 
-.circle{
-    border-radius: 50%;
+.circle {
+  border-radius: 50%;
 }
 
-.dot{
-    width: 10px;
-    height: 10px;
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.inside {
+  background-color: red;
 }
